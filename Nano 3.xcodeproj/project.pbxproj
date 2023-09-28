@@ -8,17 +8,31 @@
 
 /* Begin PBXBuildFile section */
 		810E21BE2AC2FFBA00E950E7 /* Nano_3App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 810E21BD2AC2FFBA00E950E7 /* Nano_3App.swift */; };
-		810E21C02AC2FFBA00E950E7 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 810E21BF2AC2FFBA00E950E7 /* ContentView.swift */; };
 		810E21C22AC2FFBB00E950E7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 810E21C12AC2FFBB00E950E7 /* Assets.xcassets */; };
 		810E21C52AC2FFBB00E950E7 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 810E21C42AC2FFBB00E950E7 /* Preview Assets.xcassets */; };
+		810E21CC2AC2FFD400E950E7 /* Place.swift in Sources */ = {isa = PBXBuildFile; fileRef = 810E21CB2AC2FFD400E950E7 /* Place.swift */; };
+		810E21D02AC308C000E950E7 /* PlacesList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 810E21CF2AC308C000E950E7 /* PlacesList.swift */; };
+		810E21D22AC30A4100E950E7 /* PlacesManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 810E21D12AC30A4100E950E7 /* PlacesManager.swift */; };
+		810E21D42AC311FA00E950E7 /* places.json in Resources */ = {isa = PBXBuildFile; fileRef = 810E21D32AC30F8F00E950E7 /* places.json */; };
+		810E21D62AC3158E00E950E7 /* PlacesListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 810E21D52AC3158E00E950E7 /* PlacesListItem.swift */; };
+		810E21D82AC31C4200E950E7 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 810E21D72AC31C4200E950E7 /* HomeView.swift */; };
+		810E21DA2AC320A700E950E7 /* DetailedPlaceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 810E21D92AC320A700E950E7 /* DetailedPlaceView.swift */; };
+		810E21DC2AC32BC400E950E7 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 810E21DB2AC32BC400E950E7 /* LocationManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		810E21BA2AC2FFBA00E950E7 /* Nano 3.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Nano 3.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		810E21BD2AC2FFBA00E950E7 /* Nano_3App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Nano_3App.swift; sourceTree = "<group>"; };
-		810E21BF2AC2FFBA00E950E7 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		810E21C12AC2FFBB00E950E7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		810E21C42AC2FFBB00E950E7 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		810E21CB2AC2FFD400E950E7 /* Place.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Place.swift; sourceTree = "<group>"; };
+		810E21CF2AC308C000E950E7 /* PlacesList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacesList.swift; sourceTree = "<group>"; };
+		810E21D12AC30A4100E950E7 /* PlacesManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacesManager.swift; sourceTree = "<group>"; };
+		810E21D32AC30F8F00E950E7 /* places.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = places.json; sourceTree = "<group>"; };
+		810E21D52AC3158E00E950E7 /* PlacesListItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacesListItem.swift; sourceTree = "<group>"; };
+		810E21D72AC31C4200E950E7 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		810E21D92AC320A700E950E7 /* DetailedPlaceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailedPlaceView.swift; sourceTree = "<group>"; };
+		810E21DB2AC32BC400E950E7 /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,8 +66,15 @@
 			isa = PBXGroup;
 			children = (
 				810E21BD2AC2FFBA00E950E7 /* Nano_3App.swift */,
-				810E21BF2AC2FFBA00E950E7 /* ContentView.swift */,
 				810E21C12AC2FFBB00E950E7 /* Assets.xcassets */,
+				810E21CB2AC2FFD400E950E7 /* Place.swift */,
+				810E21CF2AC308C000E950E7 /* PlacesList.swift */,
+				810E21D52AC3158E00E950E7 /* PlacesListItem.swift */,
+				810E21D72AC31C4200E950E7 /* HomeView.swift */,
+				810E21D92AC320A700E950E7 /* DetailedPlaceView.swift */,
+				810E21D12AC30A4100E950E7 /* PlacesManager.swift */,
+				810E21D32AC30F8F00E950E7 /* places.json */,
+				810E21DB2AC32BC400E950E7 /* LocationManager.swift */,
 				810E21C32AC2FFBB00E950E7 /* Preview Content */,
 			);
 			path = "Nano 3";
@@ -104,11 +125,11 @@
 			};
 			buildConfigurationList = 810E21B52AC2FFBA00E950E7 /* Build configuration list for PBXProject "Nano 3" */;
 			compatibilityVersion = "Xcode 14.0";
-			developmentRegion = en;
+			developmentRegion = "pt-BR";
 			hasScannedForEncodings = 0;
 			knownRegions = (
-				en,
 				Base,
+				"pt-BR",
 			);
 			mainGroup = 810E21B12AC2FFBA00E950E7;
 			productRefGroup = 810E21BB2AC2FFBA00E950E7 /* Products */;
@@ -125,6 +146,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				810E21D42AC311FA00E950E7 /* places.json in Resources */,
 				810E21C52AC2FFBB00E950E7 /* Preview Assets.xcassets in Resources */,
 				810E21C22AC2FFBB00E950E7 /* Assets.xcassets in Resources */,
 			);
@@ -137,8 +159,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				810E21C02AC2FFBA00E950E7 /* ContentView.swift in Sources */,
+				810E21D62AC3158E00E950E7 /* PlacesListItem.swift in Sources */,
+				810E21D82AC31C4200E950E7 /* HomeView.swift in Sources */,
+				810E21D22AC30A4100E950E7 /* PlacesManager.swift in Sources */,
+				810E21CC2AC2FFD400E950E7 /* Place.swift in Sources */,
+				810E21DC2AC32BC400E950E7 /* LocationManager.swift in Sources */,
 				810E21BE2AC2FFBA00E950E7 /* Nano_3App.swift in Sources */,
+				810E21DA2AC320A700E950E7 /* DetailedPlaceView.swift in Sources */,
+				810E21D02AC308C000E950E7 /* PlacesList.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -275,6 +303,9 @@
 				DEVELOPMENT_TEAM = Q379URF792;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "always and when in use";
+				INFOPLIST_KEY_NSLocationAlwaysUsageDescription = always;
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "When in use";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -304,6 +335,9 @@
 				DEVELOPMENT_TEAM = Q379URF792;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "always and when in use";
+				INFOPLIST_KEY_NSLocationAlwaysUsageDescription = always;
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "When in use";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

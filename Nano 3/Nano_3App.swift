@@ -11,7 +11,8 @@ import SwiftUI
 struct Nano_3App: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            HomeView()
+                .preferredColorScheme(.light)
         }
     }
 }
