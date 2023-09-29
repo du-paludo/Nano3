@@ -8,63 +8,50 @@
 import Foundation
 import CoreLocation
 
-//class Place: Decodable, Identifiable {
-class Place: NSObject, Identifiable, ObservableObject, NSCoding {
-    func encode(with coder: NSCoder) {
-        <#code#>
-    }
+class Place: Identifiable, ObservableObject {
+//    required init(from decoder: Decoder) throws {
+//        let values = try decoder.container(keyedBy: RootKeys.self)
+//        name = try values.decode(String.self, forKey: .name)
+//        image = try values.decode(String.self, forKey: .images)
+//        desc = try values.decode(String.self, forKey: .description)
+//        latitude = try values.decode(Double.self, forKey: .latitude)
+//        longitude = try values.decode(Double.self, forKey: .longitude)
+//    }
     
-    required init?(coder: NSCoder) {
-        name = coder.decodeObject(forKey: "name") as! String
-        images = coder.decodeObject(forKey: "images") as! [String]
-        dateOfVisit = coder.decodeObject(forKey: "dateOfVisit") as! Date
-        name = coder.decodeObject(forKey: "desc") as! String
-        desc = coder.decodeObject(forKey: "comments") as! String
-        unlocked = coder.decodeObject(forKey: "unlocked") as! Bool
+    init(name: String, image: String, desc: String, latitude: Double, longitude: Double) {
+        self.name = name
+        self.image = image
+        self.desc = desc
+        self.latitude = latitude
+        self.longitude = longitude
     }
     
     internal var id = UUID()
     private let name: String
-    private var images: [String]
+    private var image: String
     private var dateOfVisit: Date = Date()
     private let desc: String
     private var comments: String?
     private var unlocked: Bool = false
-    private var location: CLLocation
+    var latitude: Double
+    var longitude: Double
     @Published private var distance: Int?
     
     enum RootKeys: String, CodingKey {
         case name, images, description, latitude, longitude
     }
     
-    //    required init(from decoder: Decoder) throws {
-    //        let values = try decoder.container(keyedBy: RootKeys.self)
-    //        name = try values.decode(String.self, forKey: .name)
-    //        images = try values.decode([String].self, forKey: .images)
-    //        description = try values.decode(String.self, forKey: .description)
-    //        let latitude = try values.decode(Double.self, forKey: .latitude)
-    //        let longitude = try values.decode(Double.self, forKey: .longitude)
-    //        location = CLLocation(latitude: latitude, longitude: longitude)
-    //    }
-    
-    init(name: String, images: [String], description: String, latitude: Double, longitude: Double) {
-        self.name = name
-        self.images = images
-        self.description = description
-        self.location = CLLocation(latitude: latitude, longitude: longitude)
-    }
-    
     public func getName() -> String {
         return self.name
     }
     
-    public func getImages() -> [String] {
-        return self.images
+    public func getImages() -> String {
+        return self.image
     }
     
-    public func addImage(image: String) {
-        self.images.append(image)
-    }
+//    public func addImage(image: String) {
+//        self.images.append(image)
+//    }
     
     public func getDateOfVisit() -> Date? {
         return self.dateOfVisit
@@ -75,7 +62,7 @@ class Place: NSObject, Identifiable, ObservableObject, NSCoding {
     }
     
     public func getDescription() -> String {
-        return self.description
+        return self.desc
     }
     
     public func getComments() -> String? {
@@ -94,10 +81,10 @@ class Place: NSObject, Identifiable, ObservableObject, NSCoding {
         return unlocked
     }
     
-    public func getLocation() -> CLLocation {
-        return location
-    }
-    
+//    public func getLocation() -> CLLocation {
+//        return location
+//    }
+//
     public func getDistance() -> Int {
         if let dis = distance {
             return dis

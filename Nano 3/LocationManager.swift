@@ -70,7 +70,7 @@ class LocationManager: NSObject, ObservableObject, CLLocationManagerDelegate {
         guard let location = locations.last else { return }
         lastLocation = location
         for place in PlacesManager.places {
-            place.setDistance(distance: Int(place.getLocation().distance(from: location)))
+            place.setDistance(distance: Int(CLLocation(latitude: place.latitude, longitude: place.longitude).distance(from: location)))
 //            print(place.getDistance())
         }
         PlacesManager.sortPlaces()

@@ -22,10 +22,10 @@ struct PlacesListItem: View {
     
     var body: some View {
         NavigationLink {
-            DetailedPlaceView(place: place, mapPosition: MapCameraPosition.region(MKCoordinateRegion(center: place.getLocation().coordinate, span: MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01))))
+            DetailedPlaceView(place: place, mapPosition: MapCameraPosition.region(MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: place.latitude, longitude: place.longitude), span: MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01))))
         } label: {
             VStack(spacing: 0) {
-                Image(place.getImages().first!)
+                Image(place.getImages())
                     .resizable()
                     .scaledToFill()
                     .frame(maxHeight: 120)

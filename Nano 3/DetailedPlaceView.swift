@@ -16,7 +16,7 @@ struct DetailedPlaceView: View {
     var body: some View {
         ScrollView {
             VStack(alignment: .leading, spacing: 16) {
-                Image(place.getImages().first!)
+                Image(place.getImages())
                     .resizable()
                     .scaledToFill()
                     .frame(height: 240)
@@ -41,7 +41,7 @@ struct DetailedPlaceView: View {
                 
                 Map(position: $mapPosition) {
                     UserAnnotation()
-                    Marker(place.getName(), coordinate: place.getLocation().coordinate)
+                    Marker(place.getName(), coordinate: CLLocationCoordinate2D(latitude: place.latitude, longitude: place.longitude))
                 }
                 .clipShape(RoundedRectangle(cornerRadius: 16))
                 .frame(maxWidth: .infinity, minHeight: 240)
