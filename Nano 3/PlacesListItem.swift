@@ -20,14 +20,6 @@ struct PlacesListItem: View {
 //        return "\(locationManager.lastLocation?.coordinate.longitude ?? 0)"
 //    }
     
-    var distance: Double? {
-        if let userLocation = locationManager.lastLocation {
-            return place.getLocation().distance(from: userLocation)
-        } else {
-            return nil
-        }
-    }
-    
     var body: some View {
         NavigationLink {
             DetailedPlaceView(place: place, mapPosition: MapCameraPosition.region(MKCoordinateRegion(center: place.getLocation().coordinate, span: MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01))))
@@ -59,25 +51,18 @@ struct PlacesListItem: View {
                             .bold()
                         Spacer()
                         if !place.isUnlocked() {
-                            if let dis = distance {
-                                Text("\(Int(dis))m de você")
+//                            if let dis = place.getDistance() {
+                            Text("\(place.getDistance())m")
                                     .font(.caption2)
-                            } else {
-                                Text("???m de você")
-                                    .font(.caption2)
-                            }
+//                            } else {
+//                                Text("???m de você")
+//                                    .font(.caption2)
+//                            }
                         }
                     }
                 }
                 .frame(maxWidth: .infinity, alignment: .leading)
                 .padding(8)
-            }
-            .onChange(of: distance) {
-                if let dis = distance {
-                    if dis < 40 {
-                        place.setUnlocked(unlocked: true)
-                    }
-                }
             }
             .background {
                 RoundedRectangle(cornerRadius: 8)

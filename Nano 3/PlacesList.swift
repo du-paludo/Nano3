@@ -8,7 +8,6 @@
 import SwiftUI
 
 struct PlacesList: View {
-    let places = PlacesManager.readJSONFile()
     let selectedFilter: Filter
     
     let columns = [
@@ -20,7 +19,7 @@ struct PlacesList: View {
     
     var body: some View {
         LazyVGrid(columns: columns, spacing: 16) {
-            ForEach(places) { place in
+            ForEach(PlacesManager.places) { place in
                 if !(selectedFilter == .notUnlocked && place.isUnlocked()) {
                     PlacesListItem(place: place)
                 }

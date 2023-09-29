@@ -19,8 +19,8 @@ struct DetailedPlaceView: View {
                 Image(place.getImages().first!)
                     .resizable()
                     .scaledToFill()
+                    .frame(height: 240)
                     .clipShape(RoundedRectangle(cornerRadius: 16))
-                    .frame(maxHeight: 240)
                 
                 HStack {
                     Text("Data de visita")

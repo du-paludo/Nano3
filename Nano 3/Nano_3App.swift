@@ -9,6 +9,10 @@ import SwiftUI
 
 @main
 struct Nano_3App: App {
+//    init() {
+//        PlacesManager.readJSONFile()
+//    }
+    
     var body: some Scene {
         WindowGroup {
             HomeView()
