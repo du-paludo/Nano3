@@ -25,13 +25,13 @@ struct PlacesListItem: View {
             DetailedPlaceView(place: place, mapPosition: MapCameraPosition.region(MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: place.latitude, longitude: place.longitude), span: MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01))))
         } label: {
             VStack(spacing: 0) {
-                Image(place.getImages())
+                Image(place.image)
                     .resizable()
                     .scaledToFill()
                     .frame(maxHeight: 120)
                     .clipShape(UnevenRoundedRectangle(cornerRadii: .init(topLeading: 8, topTrailing: 8)))
                     .overlay {
-                        if !place.isUnlocked() {
+                        if !place.unlocked {
                             ZStack {
                                 Color(.black)
                                     .opacity(0.5)
@@ -44,20 +44,20 @@ struct PlacesListItem: View {
                     .clipShape(UnevenRoundedRectangle(cornerRadii: .init(topLeading: 8, topTrailing: 8)))
                 VStack(alignment: .leading) {
                     HStack {
-                        Text(place.isUnlocked() ? place.getName() : "???")
+                        Text(place.unlocked ? place.name : "???")
                             .foregroundStyle(.black)
                             .frame(maxWidth: .infinity, alignment: .leading)
                             .font(.footnote)
                             .bold()
                         Spacer()
-                        if !place.isUnlocked() {
-//                            if let dis = place.getDistance() {
-                            Text("\(place.getDistance())m")
+                        if !place.unlocked {
+                            if let dis = place.distance {
+                                Text("\(dis)m")
                                     .font(.caption2)
-//                            } else {
-//                                Text("???m de você")
-//                                    .font(.caption2)
-//                            }
+                            } else {
+                                Text("???m de você")
+                                    .font(.caption2)
+                            }
                         }
                     }
                 }
@@ -69,6 +69,9 @@ struct PlacesListItem: View {
                     .shadow(radius: 4)
                     .foregroundStyle(.white)
                     .frame(maxWidth: .infinity, maxHeight: 160)
+            }
+            .onChange(of: locationManager.lastLocation) {
+                place.distance = Int(CLLocation(latitude: place.latitude, longitude: place.longitude).distance(from: locationManager.lastLocation!))
             }
         }
     }

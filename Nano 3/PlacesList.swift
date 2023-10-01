@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import SwiftData
 
 struct PlacesList: View {
     let selectedFilter: Filter
@@ -16,11 +17,13 @@ struct PlacesList: View {
         ]
     
     @StateObject var locationManager = LocationManager()
+    @Environment(\.modelContext) private var context
+    @Query(sort: \Place.distance, order: .forward) var places: [Place]
     
     var body: some View {
         LazyVGrid(columns: columns, spacing: 16) {
-            ForEach(PlacesManager.places) { place in
-                if !(selectedFilter == .notUnlocked && place.isUnlocked()) {
+            ForEach(places) { place in
+                if !(selectedFilter == .notUnlocked && place.unlocked) {
                     PlacesListItem(place: place)
                 }
             }

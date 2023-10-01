@@ -6,15 +6,17 @@
 //
 
 import SwiftUI
+import SwiftData
 
 @main
 struct Nano_3App: App {
 //    let persistenceController = PersistenceController.shared
-
+ 
     var body: some Scene {
         WindowGroup {
             HomeView()
-//                .environment(\.managedObjectContext, persistenceController.container.viewContext)
+                //.preferredColorScheme(.light)
+                .modelContainer(for: [Place.self])
         }
     }
 }

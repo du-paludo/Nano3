@@ -11,12 +11,15 @@ import MapKit
 struct DetailedPlaceView: View {
     let place: Place
     @State var mapPosition: MapCameraPosition
-    @State var comment: String = ""
+    @State var comments: String = ""
+    @FocusState var isFocused: Bool
+    
+    @Environment(\.modelContext) private var context
     
     var body: some View {
         ScrollView {
             VStack(alignment: .leading, spacing: 16) {
-                Image(place.getImages())
+                Image(place.image)
                     .resizable()
                     .scaledToFill()
                     .frame(height: 240)
@@ -26,22 +29,20 @@ struct DetailedPlaceView: View {
                     Text("Data de visita")
                         .font(.body)
                         .bold()
-                        .foregroundStyle(.black)
                     Spacer()
-                    Text(dateToString(place.getDateOfVisit()!))
+                    Text(dateToString(place.dateOfVisit))
                 }
                 
                 Divider()
                 
-                Text(place.getDescription())
+                Text(place.desc)
                     .font(.callout)
-                    .foregroundStyle(.black)
                 
                 Divider()
                 
                 Map(position: $mapPosition) {
                     UserAnnotation()
-                    Marker(place.getName(), coordinate: CLLocationCoordinate2D(latitude: place.latitude, longitude: place.longitude))
+                    Marker(place.name, coordinate: CLLocationCoordinate2D(latitude: place.latitude, longitude: place.longitude))
                 }
                 .clipShape(RoundedRectangle(cornerRadius: 16))
                 .frame(maxWidth: .infinity, minHeight: 240)
@@ -51,15 +52,27 @@ struct DetailedPlaceView: View {
                 Text("Comentários")
                     .font(.body)
                     .bold()
-                TextField("Escreva algo legal sobre o lugar", text: $comment, axis: .vertical)
+                TextField("Escreva algo legal sobre o lugar", text: $comments, axis: .vertical)
+                    .focused($isFocused)
                     .textFieldStyle(.roundedBorder)
                     .lineLimit(4...5)
+                    .onChange(of: isFocused) {
+                        do {
+                            place.comments = comments
+                            try context.save()
+                        } catch {}
+                    }
                     //.submitLabel(.done)
             }
             .padding(24)
         }
+        .onAppear {
+            if let x = place.comments {
+                comments = x
+            }
+        }
         .scrollDismissesKeyboard(.interactively)
-        .navigationTitle(place.getName())
+        .navigationTitle(place.name)
     }
     
     func dateToString(_ date: Date) -> String {
