@@ -18,7 +18,26 @@
 		810E21D82AC31C4200E950E7 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 810E21D72AC31C4200E950E7 /* HomeView.swift */; };
 		810E21DA2AC320A700E950E7 /* DetailedPlaceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 810E21D92AC320A700E950E7 /* DetailedPlaceView.swift */; };
 		810E21DC2AC32BC400E950E7 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 810E21DB2AC32BC400E950E7 /* LocationManager.swift */; };
+		814B889F2ACA58AB002976A5 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 812432F32AC5A2A900F61EE6 /* WidgetKit.framework */; };
+		814B88A02ACA58AB002976A5 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 812432F52AC5A2A900F61EE6 /* SwiftUI.framework */; };
+		814B88A32ACA58AB002976A5 /* LocationWidgetBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 814B88A22ACA58AB002976A5 /* LocationWidgetBundle.swift */; };
+		814B88A52ACA58AB002976A5 /* LocationWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 814B88A42ACA58AB002976A5 /* LocationWidget.swift */; };
+		814B88A72ACA58AC002976A5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 814B88A62ACA58AC002976A5 /* Assets.xcassets */; };
+		814B88AB2ACA58AC002976A5 /* LocationWidgetExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 814B889E2ACA58AB002976A5 /* LocationWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		814B88AF2ACA5992002976A5 /* Place.swift in Sources */ = {isa = PBXBuildFile; fileRef = 810E21CB2AC2FFD400E950E7 /* Place.swift */; };
+		814B88B22ACA60BA002976A5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 810E21C12AC2FFBB00E950E7 /* Assets.xcassets */; };
+		814B88B32ACA6385002976A5 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 810E21DB2AC32BC400E950E7 /* LocationManager.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		814B88A92ACA58AC002976A5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 810E21B22AC2FFBA00E950E7 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 814B889D2ACA58AB002976A5;
+			remoteInfo = LocationWidgetExtension;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
 		812433022AC5A2AA00F61EE6 /* Embed Foundation Extensions */ = {
@@ -27,6 +46,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 13;
 			files = (
+				814B88AB2ACA58AC002976A5 /* LocationWidgetExtension.appex in Embed Foundation Extensions */,
 			);
 			name = "Embed Foundation Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -49,6 +69,13 @@
 		812432F32AC5A2A900F61EE6 /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
 		812432F52AC5A2A900F61EE6 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
 		8124330C2AC5BBE400F61EE6 /* Nano-3-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "Nano-3-Info.plist"; sourceTree = SOURCE_ROOT; };
+		814B889E2ACA58AB002976A5 /* LocationWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = LocationWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		814B88A22ACA58AB002976A5 /* LocationWidgetBundle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationWidgetBundle.swift; sourceTree = "<group>"; };
+		814B88A42ACA58AB002976A5 /* LocationWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationWidget.swift; sourceTree = "<group>"; };
+		814B88A62ACA58AC002976A5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		814B88A82ACA58AC002976A5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		814B88B02ACA5CE6002976A5 /* LocationWidgetExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = LocationWidgetExtension.entitlements; sourceTree = "<group>"; };
+		814B88B12ACA6034002976A5 /* Nano 3.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Nano 3.entitlements"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,13 +86,24 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		814B889B2ACA58AB002976A5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				814B88A02ACA58AB002976A5 /* SwiftUI.framework in Frameworks */,
+				814B889F2ACA58AB002976A5 /* WidgetKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
 		810E21B12AC2FFBA00E950E7 = {
 			isa = PBXGroup;
 			children = (
+				814B88B02ACA5CE6002976A5 /* LocationWidgetExtension.entitlements */,
 				810E21BC2AC2FFBA00E950E7 /* Nano 3 */,
+				814B88A12ACA58AB002976A5 /* LocationWidget */,
 				812432F22AC5A2A900F61EE6 /* Frameworks */,
 				810E21BB2AC2FFBA00E950E7 /* Products */,
 			);
@@ -75,6 +113,7 @@
 			isa = PBXGroup;
 			children = (
 				810E21BA2AC2FFBA00E950E7 /* Nano 3.app */,
+				814B889E2ACA58AB002976A5 /* LocationWidgetExtension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -82,6 +121,7 @@
 		810E21BC2AC2FFBA00E950E7 /* Nano 3 */ = {
 			isa = PBXGroup;
 			children = (
+				814B88B12ACA6034002976A5 /* Nano 3.entitlements */,
 				8124330C2AC5BBE400F61EE6 /* Nano-3-Info.plist */,
 				810E21BD2AC2FFBA00E950E7 /* Nano_3App.swift */,
 				810E21C12AC2FFBB00E950E7 /* Assets.xcassets */,
@@ -115,6 +155,17 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		814B88A12ACA58AB002976A5 /* LocationWidget */ = {
+			isa = PBXGroup;
+			children = (
+				814B88A22ACA58AB002976A5 /* LocationWidgetBundle.swift */,
+				814B88A42ACA58AB002976A5 /* LocationWidget.swift */,
+				814B88A62ACA58AC002976A5 /* Assets.xcassets */,
+				814B88A82ACA58AC002976A5 /* Info.plist */,
+			);
+			path = LocationWidget;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -130,11 +181,29 @@
 			buildRules = (
 			);
 			dependencies = (
+				814B88AA2ACA58AC002976A5 /* PBXTargetDependency */,
 			);
 			name = "Nano 3";
 			productName = "Nano 3";
 			productReference = 810E21BA2AC2FFBA00E950E7 /* Nano 3.app */;
 			productType = "com.apple.product-type.application";
+		};
+		814B889D2ACA58AB002976A5 /* LocationWidgetExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 814B88AE2ACA58AC002976A5 /* Build configuration list for PBXNativeTarget "LocationWidgetExtension" */;
+			buildPhases = (
+				814B889A2ACA58AB002976A5 /* Sources */,
+				814B889B2ACA58AB002976A5 /* Frameworks */,
+				814B889C2ACA58AB002976A5 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = LocationWidgetExtension;
+			productName = LocationWidgetExtension;
+			productReference = 814B889E2ACA58AB002976A5 /* LocationWidgetExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
 		};
 /* End PBXNativeTarget section */
 
@@ -147,6 +216,9 @@
 				LastUpgradeCheck = 1500;
 				TargetAttributes = {
 					810E21B92AC2FFBA00E950E7 = {
+						CreatedOnToolsVersion = 15.0;
+					};
+					814B889D2ACA58AB002976A5 = {
 						CreatedOnToolsVersion = 15.0;
 					};
 				};
@@ -165,6 +237,7 @@
 			projectRoot = "";
 			targets = (
 				810E21B92AC2FFBA00E950E7 /* Nano 3 */,
+				814B889D2ACA58AB002976A5 /* LocationWidgetExtension */,
 			);
 		};
 /* End PBXProject section */
@@ -177,6 +250,15 @@
 				810E21D42AC311FA00E950E7 /* places.json in Resources */,
 				810E21C52AC2FFBB00E950E7 /* Preview Assets.xcassets in Resources */,
 				810E21C22AC2FFBB00E950E7 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		814B889C2ACA58AB002976A5 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				814B88B22ACA60BA002976A5 /* Assets.xcassets in Resources */,
+				814B88A72ACA58AC002976A5 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -198,7 +280,26 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		814B889A2ACA58AB002976A5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				814B88B32ACA6385002976A5 /* LocationManager.swift in Sources */,
+				814B88AF2ACA5992002976A5 /* Place.swift in Sources */,
+				814B88A52ACA58AB002976A5 /* LocationWidget.swift in Sources */,
+				814B88A32ACA58AB002976A5 /* LocationWidgetBundle.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		814B88AA2ACA58AC002976A5 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 814B889D2ACA58AB002976A5 /* LocationWidgetExtension */;
+			targetProxy = 814B88A92ACA58AC002976A5 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		810E21C62AC2FFBB00E950E7 /* Debug */ = {
@@ -326,6 +427,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "Nano 3/Nano 3.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Nano 3/Preview Content\"";
@@ -360,6 +462,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "Nano 3/Nano 3.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Nano 3/Preview Content\"";
@@ -388,6 +491,62 @@
 			};
 			name = Release;
 		};
+		814B88AC2ACA58AC002976A5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_ENTITLEMENTS = LocationWidgetExtension.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = Q379URF792;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = LocationWidget/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = LocationWidget;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.example.Nano-3.LocationWidget";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		814B88AD2ACA58AC002976A5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_ENTITLEMENTS = LocationWidgetExtension.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = Q379URF792;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = LocationWidget/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = LocationWidget;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.example.Nano-3.LocationWidget";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -405,6 +564,15 @@
 			buildConfigurations = (
 				810E21C92AC2FFBB00E950E7 /* Debug */,
 				810E21CA2AC2FFBB00E950E7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		814B88AE2ACA58AC002976A5 /* Build configuration list for PBXNativeTarget "LocationWidgetExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				814B88AC2ACA58AC002976A5 /* Debug */,
+				814B88AD2ACA58AC002976A5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
