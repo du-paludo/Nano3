@@ -8,12 +8,13 @@
 import Foundation
 import CoreLocation
 import Combine
+import SwiftData
 
 class LocationManager: NSObject, ObservableObject, CLLocationManagerDelegate {
     private let locationManager = CLLocationManager()
     @Published var locationStatus: CLAuthorizationStatus?
     @Published var lastLocation: CLLocation?
-
+    
     override init() {
         super.init()
         locationManager.delegate = self
@@ -69,13 +70,7 @@ class LocationManager: NSObject, ObservableObject, CLLocationManagerDelegate {
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         guard let location = locations.last else { return }
         lastLocation = location
-        for place in PlacesManager.places {
-            place.setDistance(distance: Int(place.getLocation().distance(from: location)))
-//            print(place.getDistance())
-        }
-        PlacesManager.sortPlaces()
-//         print(#function, location)
-        
+//      print(#function, location)
     }
     
     func requestAuthorization() {

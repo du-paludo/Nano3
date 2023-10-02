@@ -6,17 +6,18 @@
 //
 
 import SwiftUI
+import SwiftData
 
 @main
 struct Nano_3App: App {
-//    init() {
-//        PlacesManager.readJSONFile()
-//    }
-    
+//    let persistenceController = PersistenceController.shared
+ 
     var body: some Scene {
         WindowGroup {
             HomeView()
-                .preferredColorScheme(.light)
+                //.preferredColorScheme(.light)
+                .modelContainer(for: [Place.self])
         }
     }
 }
+
