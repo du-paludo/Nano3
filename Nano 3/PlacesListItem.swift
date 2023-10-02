@@ -27,8 +27,8 @@ struct PlacesListItem: View {
             VStack(spacing: 0) {
                 Image(place.image)
                     .resizable()
-                    .scaledToFill()
-                    .frame(maxHeight: 120)
+                    .frame(height: 120)
+                    .scaledToFit()
                     .clipShape(UnevenRoundedRectangle(cornerRadii: .init(topLeading: 8, topTrailing: 8)))
                     .overlay {
                         if !place.unlocked {
@@ -54,9 +54,11 @@ struct PlacesListItem: View {
                             if let dis = place.distance {
                                 Text("\(dis)m")
                                     .font(.caption2)
+                                    .foregroundStyle(.blue)
                             } else {
                                 Text("???m de você")
                                     .font(.caption2)
+                                    .foregroundStyle(.blue)
                             }
                         }
                     }
@@ -70,8 +72,13 @@ struct PlacesListItem: View {
                     .foregroundStyle(.white)
                     .frame(maxWidth: .infinity, maxHeight: 160)
             }
-            .onChange(of: locationManager.lastLocation) {
-                place.distance = Int(CLLocation(latitude: place.latitude, longitude: place.longitude).distance(from: locationManager.lastLocation!))
+        }
+        .disabled(!place.unlocked)
+        .onChange(of: locationManager.lastLocation) {
+            place.distance = Int(CLLocation(latitude: place.latitude, longitude: place.longitude).distance(from: locationManager.lastLocation!))
+            if place.distance! < 50 {
+                place.dateOfVisit = Date.now
+                place.unlocked = true
             }
         }
     }

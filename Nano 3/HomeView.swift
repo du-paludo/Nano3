@@ -33,9 +33,6 @@ struct HomeView: View {
         NavigationStack {
             ScrollView {
                 VStack(alignment: .leading) {
-//                    Text("Meus lugares")
-//                        .font(.largeTitle)
-//                        .bold()
                     PlacesList(selectedFilter: selectedFilter)
                     Spacer()
                 }
@@ -83,6 +80,13 @@ struct HomeView: View {
                     desc: "CAAD (Centro Acadêmico Alexandre Direne) é o centro acadêmico do curso de Ciência da Computação da UFPR, localizado no Centro Politécnico.",
                     latitude: -25.45044848568505,
                     longitude: -49.23225
+                ))
+                context.insert(Place(
+                    name: "Minha casa",
+                    image: "house",
+                    desc: "...",
+                    latitude: -25.43319263123481,
+                    longitude: -49.242334957666706
                 ))
             }
         }

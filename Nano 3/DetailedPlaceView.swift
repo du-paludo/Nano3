@@ -21,8 +21,8 @@ struct DetailedPlaceView: View {
             VStack(alignment: .leading, spacing: 16) {
                 Image(place.image)
                     .resizable()
-                    .scaledToFill()
                     .frame(height: 240)
+                    .scaledToFill()
                     .clipShape(RoundedRectangle(cornerRadius: 16))
                 
                 HStack {
@@ -30,7 +30,9 @@ struct DetailedPlaceView: View {
                         .font(.body)
                         .bold()
                     Spacer()
-                    Text(dateToString(place.dateOfVisit))
+                    if let date = place.dateOfVisit {
+                        Text(dateToString(date))
+                    }
                 }
                 
                 Divider()

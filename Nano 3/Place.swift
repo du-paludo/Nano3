@@ -22,7 +22,7 @@ class Place: Identifiable, ObservableObject {
     internal var id = UUID()
     let name: String
     var image: String
-    var dateOfVisit: Date = Date()
+    var dateOfVisit: Date?
     let desc: String
     var comments: String?
     var unlocked: Bool = false
